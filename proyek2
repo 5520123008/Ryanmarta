@@ -1,0 +1,13 @@
+nama = input("masukan nama anda : ")
+print("selamat siang,,"
+      "apa kabar?")
+kabar = input("masukan kabar saya : ")
+print("kabar saya juga", "semangat ya")
+prodi = input("masukan prodi anda : ")
+alamat = input("masukan alamat anda : ")
+masukan nama anda : ryan
+selamat siang,,apa kabar?
+masukan kabar saya : baik
+kabar saya juga semangat ya
+masukan prodi anda : imu komputer
+masukan alamat anda : kampung karang bali praya
