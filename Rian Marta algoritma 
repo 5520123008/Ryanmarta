@@ -1,0 +1,25 @@
+"""
+
+
+Ryan pergi ke pasar membeli sembako seperti kecap,mie instan,beras,telur, tepung,minyak, gula
+kecap     = 8000
+miei      = 3500
+beras     = 10000
+telur     = 2500
+minyak    = 16000
+tepung    = 9000
+gula      = 8000     
+Rian ingin semua barang tersebut sesuai keinginan 
+buatlah sebuah programan
+=================================================||
+|| nama barang||queen || harga satuan || total   ||                                    ||
+=================================================||
+||  kecap     ||  5   ||    8.000      || 40.000 ||
+|| mie instan ||  6   ||    3.500      || 21.000 ||
+||  beras     ||  2   ||    10.000     || 20.000 ||
+||  telur     ||  4   ||    2.500      || 10.000 ||
+||  minyak    ||  1   ||   16.000      || 16.000 ||
+||  tepung    ||  3   ||    9.000      || 27.000 ||
+||  gula      ||  2   ||    8.000      || 16.000 ||
+===================================================
+                                total.    150.000
