@@ -1,0 +1,10 @@
+import time
+
+while True:
+    current_time = time.localtime()
+    jam = current_time.tm_hour
+    menit = current_time.tm_min
+    detik = current_time.tm_sec
+    waktu_sekarang = f"{jam:02d}:{menit:02d}:{detik:02d}"
+    print(waktu_sekarang, end="\r")
+    time.sleep(1)
