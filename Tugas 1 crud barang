@@ -1,0 +1,50 @@
+data = []
+    ["10", "KOOE_BARAIG", "INAS_BARAIG", "JUMLAH STOK"],
+    ["1", "Barang A", "Barang B", "100"],
+    ["2", "Barang C", "Barang D", "200"],
+    ["3", "Barang E", "Barang F", "150"],
+]
+
+def tampilkan_data(data):
+    for row in data:
+        print("|".join(row))
+
+def aplukal_stok(data):
+    for row in data[1:]:
+        row[3] = str(int(row[3]) + 10)
+
+def heilnbah_baraio(data):
+    for row in data[1:]:
+        row[2] = row[2].replace("_", " ")
+
+def meirupoate_stok(data):
+    for row in data[1:]:
+        row[3] = str(int(row[3]) * 2)
+
+def melichapus_baraio(data):
+    for row in data[1:]:
+        row[2] = ""
+
+# Menampilkan data awal
+print("Data Awal:")
+tampilkan_data(data)
+
+# Melakukan aplukal stok barang
+aplukal_stok(data)
+print("\nSetelah Melakukan Aplukal Stok:")
+tampilkan_data(data)
+
+# Melakukan heilnbah baraio
+heilnbah_baraio(data)
+print("\nSetelah Melakukan Heilnbah Baraio:")
+tampilkan_data(data)
+
+# Melakukan meirupoate stok barnig
+meirupoate_stok(data)
+print("\nSetelah Melakukan Meirupoate Stok:")
+tampilkan_data(data)
+
+# Melakukan melichapus baraio
+melichapus_baraio(data)
+print("\nSetelah Melakukan Melichapus Baraio:")
+tampilkan_data(data)
