@@ -1,0 +1,99 @@
+# Inisialisasi daftar barang dan daftar kasir
+daftar_barang = []
+daftar_kasir = []
+
+# Fungsi untuk menampilkan daftar barang
+def tampilkan_barang():
+    if len(daftar_barang) > 0:
+        print("Daftar Barang:")
+        for barang in daftar_barang:
+            print(barang)
+    else:
+        print("Tidak ada barang yang tersedia.")
+
+# Fungsi untuk menambahkan barang baru
+def tambah_barang():
+    nama_barang = input("Masukkan nama barang: ")
+    daftar_barang.append(nama_barang)
+    print("Barang", nama_barang, "telah ditambahkan.")
+
+# Fungsi untuk menghapus barang
+def hapus_barang():
+    nama_barang = input("Masukkan nama barang yang ingin dihapus: ")
+    if nama_barang in daftar_barang:
+        daftar_barang.remove(nama_barang)
+        print("Barang", nama_barang, "telah dihapus.")
+    else:
+        print("Barang", nama_barang, "tidak ditemukan.")
+
+# Fungsi untuk mengupdate nama barang
+def update_nama_barang():
+    nama_barang = input("Masukkan nama barang yang ingin diupdate: ")
+    if nama_barang in daftar_barang:
+        index = daftar_barang.index(nama_barang)
+        nama_baru = input("Masukkan nama baru: ")
+        daftar_barang[index] = nama_baru
+        print("Nama barang", nama_barang, "telah diupdate menjadi", nama_baru)
+    else:
+        print("Barang", nama_barang, "tidak ditemukan.")
+
+# Fungsi untuk mengupdate stok barang
+def update_stok_barang():
+    nama_barang = input("Masukkan nama barang yang ingin diupdate stok: ")
+    if nama_barang in daftar_barang:
+        index = daftar_barang.index(nama_barang)
+        stok_baru = int(input("Masukkan stok baru: "))
+        daftar_barang[index] = (nama_barang, stok_baru)
+        print("Stok barang", nama_barang, "telah diupdate menjadi", stok_baru)
+    else:
+        print("Barang", nama_barang, "tidak ditemukan.")
+
+# Fungsi untuk menampilkan data kasir
+def tampilkan_data_kasir():
+    if len(daftar_kasir) > 0:
+        print("Data Kasir:")
+        for kasir in daftar_kasir:
+            print("Kode:", kasir[0], "- Nama:", kasir[1])
+    else:
+        print("Tidak ada data kasir yang tersedia.")
+
+# Fungsi untuk menambahkan kasir baru
+def tambah_kasir():
+    kode_kasir = input("Masukkan kode kasir: ")
+    nama_kasir = input("Masukkan nama kasir: ")
+    daftar_kasir.append((kode_kasir, nama_kasir))
+    print("Kasir", nama_kasir, "telah ditambahkan.")
+
+# Fungsi untuk menghapus kasir
+def hapus_kasir():
+    kode_kasir = input("Masukkan kode kasir yang ingin dihapus: ")
+    for kasir in daftar_kasir:
+        if kasir[0] == kode_kasir:
+            daftar_kasir.remove(kasir)
+            print("Kasir dengan kode", kode_kasir, "telah dihapus.")
+            return
+    print("Kasir dengan kode", kode_kasir, "tidak ditemukan.")
+
+# Fungsi untuk mengedit kasir
+def edit_kasir():
+    kode_kasir = input("Masukkan kode kasir yang ingin diedit: ")
+    for kasir in daftar_kasir:
+        if kasir[0] == kode_kasir:
+            nama_kasir_baru = input("Masukkan nama kasir baru: ")
+            kasir = (kode_kasir, nama_kasir_baru)
+            print("Kasir dengan kode", kode_kasir, "telah diupdate.")
+            return
+    print("Kasir dengan kode", kode_kasir, "tidak ditemukan.")
+
+# Fungsi untuk menampilkan menu dan meminta input pilihan
+def tampilkan_menu():
+    print("Menu:")
+    print("1. Tampilkan Barang")
+    print("2. Tambah Barang")
+    print("3. Hapus Barang")
+    print("4. Update Nama Barang")
+    print("5. Update Stok Barang")
+    print("6. Tampilkan Data Kasir")
+    print("7. Tambah Kasir")
+    print("8. Hapus Kasir")
+    print("9. Edit Kasir")
