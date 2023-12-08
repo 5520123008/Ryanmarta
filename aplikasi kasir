@@ -1,0 +1,67 @@
+#Import library
+import datetime
+
+# Inisialisasi variabel
+total_harga = 0
+daftar_barang = []
+
+# Fungsi untuk menambahkan barang ke daftar belanja
+def tambah_barang(nama_barang, harga_barang):
+    global total_harga
+    total_harga += harga_barang
+    daftar_barang.append((nama_barang, harga_barang))
+
+# Fungsi untuk menghapus barang dari daftar belanja
+def hapus_barang(nama_barang):
+    global total_harga
+    for barang in daftar_barang:
+        if barang[0] == nama_barang:
+            total_harga -= barang[1]
+            daftar_barang.remove(barang)
+            break
+
+# Fungsi untuk menampilkan daftar belanja
+def tampilkan_daftar():
+    print("Daftar Belanja:")
+    for barang in daftar_barang:
+        print(f"- {barang[0]}: Rp {barang[1]}")
+    print(f"Total Harga: Rp {total_harga}")
+
+# Fungsi untuk melakukan pembayaran
+def bayar(total_bayar):
+    kembalian = total_bayar - total_harga
+    if kembalian >= 0:
+        print(f"Terima kasih! Kembalian Anda: Rp {kembalian}")
+        print("Terima kasih telah berbelanja!")
+        print("Tanggal dan Waktu Pembelian:", datetime.datetime.now())
+    else:
+        print("Maaf, uang yang Anda bayarkan kurang.")
+
+# Main program
+while True:
+    print("=== Aplikasi Kasir ===")
+    print("1. Tambah Barang")
+    print("2. Hapus Barang")
+    print("3. Tampilkan Daftar Belanja")
+    print("4. Bayar")
+    print("5. Keluar")
+
+    pilihan = input("Masukkan pilihan (1-5): ")
+
+    if pilihan == "1":
+        nama_barang = input("Masukkan nama barang: ")
+        harga_barang = int(input("Masukkan harga barang: "))
+        tambah_barang(nama_barang, harga_barang)
+    elif pilihan == "2":
+        nama_barang = input("Masukkan nama barang yang ingin dihapus: ")
+        hapus_barang(nama_barang)
+    elif pilihan == "3":
+        tampilkan_daftar()
+    elif pilihan == "4":
+        total_bayar = int(input("Masukkan total uang yang dibayarkan: "))
+        bayar(total_bayar)
+        break
+    elif pilihan == "5":
+        break
+    else:
+        print("Pilihan tidak valid. Silakan pilih kembali.")
