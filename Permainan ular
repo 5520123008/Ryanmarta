@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Permainan Ular</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    canvas {
+      background: #222;
+      border: 2px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Skor: <span id="score">0</span></h1>
+  <canvas id="game" width="400" height="400"></canvas>
+  <audio id="eat-sound" src="eat.mp3"></audio>
+
+  <script>
+    const canvas = document.getElementById("game");
+    const ctx = canvas.getContext("2d");
+    const scoreDisplay = document.getElementById("score");
+    const eatSound = document.getElementById("eat-sound");
+
+    const grid = 20;
+    let count = 0;
+    let score = 0;
+    let snake = [{ x: 160, y: 160 }];
+    let dx = grid;
+    let dy = 0;
